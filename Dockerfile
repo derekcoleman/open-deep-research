@@ -2,6 +2,9 @@ FROM node:20-alpine
 
 WORKDIR /app
 
+# Install required system dependencies for SWC
+RUN apk add --no-cache libc6-compat
+
 # Install pnpm
 RUN npm install -g pnpm
 
